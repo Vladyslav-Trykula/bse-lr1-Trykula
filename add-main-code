@@ -1,0 +1,16 @@
+class SessionTime:
+    def __init__(self):
+        self.time_in_minutes = 0
+
+    def set_time(self, minutes):
+        if minutes < 0:
+            raise ValueError("Time cannot be negative")
+        self.time_in_minutes = minutes
+    
+    def get_time(self):
+        return self.time_in_minutes
+
+    def __str__(self):
+        hours = self.time_in_minutes // 60
+        minutes = self.time_in_minutes % 60
+        return f"{hours}:{minutes:02d}"
